@@ -1,0 +1,193 @@
+# DkKlan Configuration
+clan-creation-cost: 1000.0
+
+# -----------------------------------------------------------------------------
+# KLAN SAVAŞLARI AYARLARI
+# -----------------------------------------------------------------------------
+wars:
+  enabled: true
+  min-players: 2 # Savaş başlatmak için gereken minimum oyuncu (taraf başına)
+  max-duration: 1800 # Saniye cinsinden maksimum savaş süresi (30 dk)
+  arena-world: "world" # Savaş arenası dünyası
+  friendly-fire: false
+  keep-inventory: true
+  border:
+    enabled: true
+    start-size: 150
+    end-size: 20
+    shrink-seconds: 1800
+    sudden-death-size: 5
+    sudden-death-seconds: 10
+    particles: true
+  scoreboard:
+    enabled: true
+    title: "&6&l⚔ KLAN SAVAŞI ⚔"
+    show-time: true
+    spectator-title: "&6&lSAVAŞ İZLEME"
+    lines:
+      versus: "&e%clanA% &7vs &c%clanB%"
+      score: "&aSkor: &b%scoreA% &7- &c%scoreB%"
+      time: "&eSüre: &f%time% sn"
+      target: "&eHedef: &f%target%"
+      distance: "&eMesafe: &f%distance%m"
+  # Arena koordinatları (x, y, z)
+  arena-spawn-1: "100, 64, 100" 
+  arena-spawn-2: "-100, 64, -100"
+  friendly-fire: false # Savaşta takım arkadaşına vurma
+  keep-inventory: true # Ölünce eşyalar gitmesin
+  test-mode:
+    enabled: false
+    allow-fake-clans: true
+    bypass-validations: true
+    disable-season-points: true
+    disable-bets: true
+    default-bot-count: 5
+    bot-name-prefix: "BOT_"
+    admin-permission: "dkklan.test"
+
+# -----------------------------------------------------------------------------
+# ELO VE LİG SİSTEMİ
+# -----------------------------------------------------------------------------
+elo:
+  starting-elo: 1000
+  k-factor: 32 # ELO değişim katsayısı (daha yüksek = daha hızlı değişim)
+  win-bonus: 10 # Kazanana ekstra puan
+  loss-penalty: 5 # Kaybedene ekstra ceza
+
+leagues:
+  Bronze:
+    min-elo: 0
+    prefix: "&8[Bronz]"
+  Silver:
+    min-elo: 1100
+    prefix: "&7[Gümüş]"
+  Gold:
+    min-elo: 1300
+    prefix: "&6[Altın]"
+  Diamond:
+    min-elo: 1500
+    prefix: "&b[Elmas]"
+  Master:
+    min-elo: 1800
+    prefix: "&c[Usta]"
+
+# -----------------------------------------------------------------------------
+# HOLOGRAM AYARLARI
+# -----------------------------------------------------------------------------
+holograms:
+  enabled: true
+  update-interval: 20 # Tick cinsinden güncelleme hızı (20 tick = 1 sn)
+
+messages:
+  prefix: "&8[&6&lDkKlan&8] &7"
+  only-players: "&cBu komutu yalnızca oyuncular kullanabilir."
+  not-in-clan: "&cBu işlem için bir klanda bulunmalısınız."
+  clan-chat-enabled: "&aKlan sohbeti &lAKTİF&a. &7Artık sadece klan üyeleriyle konuşuyorsunuz."
+  clan-chat-disabled: "&cKlan sohbeti &lDEAKTİF&c. &7Genel sohbete geçiş yapıldı."
+  chat-format: "&8[&aKLAN&8] &7%role% &f%player% &8» &f%message%"
+  usage-create: "&eKullanım: &f/klan kur <isim>"
+  already-in-clan: "&cZaten bir klanın üyesisiniz! &7Yeni bir klan kurmak için önce mevcut klandan ayrılmalısınız."
+  clan-created: "&a%clan% &7klanı başarıyla kuruldu! &eYönetim paneli için &f/klan &eyazabilirsiniz."
+  only-leader-delete: "&cKlanı sadece klan lideri silebilir!"
+  clan-deleted: "&cKlan başarıyla silindi ve tüm üyelikler iptal edildi."
+  min-rank-moderator: "&cBu işlem için en az &eModeratör &cyetkisine sahip olmalısınız!"
+  usage-announce: "&eKullanım: &f/klan duyuru <mesaj>"
+  announcement-header: "&8&m-----------------------------------\n&6&lKLAN DUYURUSU\n&7Yazan: &f%player%\n\n&e%message%\n&8&m-----------------------------------"
+  base-not-set: "&cKlan evi henüz belirlenmemiş! &7Lütfen liderinizle iletişime geçin."
+  teleported-base: "&aBaşarıyla klan evine ışınlandınız!"
+  min-rank-admin: "&cBu işlem için en az &6Yönetici &cyetkisine sahip olmalısınız!"
+  base-set: "&aKlan evi konumu başarıyla güncellendi!"
+  usage-invite: "&eKullanım: &f/klan davet <oyuncu>"
+  player-not-found: "&cOyuncu bulunamadı veya şu an çevrimdışı."
+  target-already-in-clan: "&cBelirttiğiniz oyuncu zaten bir klanda bulunuyor."
+  invite-sent: "&a%player% &7oyuncusuna davet gönderildi."
+  invite-received: "&e%clan% &7klanından katılım daveti aldınız!"
+  invite-info: "&a/klan katil &7komutu ile daveti kabul edebilirsiniz."
+  unknown-command: "&cBilinmeyen komut! &fYardım için &e/klan yardim &fyazabilirsiniz."
+  usage-war: "&eKullanım: &f/klan savas <davet/kabul> <klan> [bahis]"
+  only-leader-war-invite: "&cSadece klan lideri savaş daveti gönderebilir!"
+  usage-war-invite: "&eKullanım: &f/klan savas davet <klan> [bahis]"
+  only-leader-war-accept: "&cSadece klan lideri savaş isteklerini kabul edebilir!"
+  usage-war-accept: "&eKullanım: &f/klan savas kabul <klan>"
+  info-header: "&8&m-----------------------------------"
+  info-title: "&6&l%clan% &7Klan Bilgileri"
+  info-leader: "&7Lider: &f%leader%"
+  info-level: "&7Seviye: &e%level%"
+  info-members: "&7Üye Sayısı: &b%count%"
+  info-elo: "&7Elo Puanı: &d%elo% &8(Lig: %league%)"
+  info-bank: "&7Banka Bakiyesi: &6%bank%"
+  info-commands: "&eKullanılabilir Komutlar:"
+  info-cmd-menu: "&f/klan menu &7- Kontrol panelini açar"
+  info-cmd-announce: "&f/klan duyuru &7- Klan içi duyuru yayınlar"
+  info-cmd-base: "&f/klan git &7- Klan evine ışınlar"
+  info-footer: "&8&m-----------------------------------"
+  clan-in-war: "&cBelirtilen klanlardan biri şu anda zaten savaşta!"
+  arena-busy: "&cTüm arenalar dolu! &7Lütfen bir süre sonra tekrar deneyin."
+  insufficient-bank: "&cKlan bankasında yeterli bakiye yok! &7(Gereken: &e%amount%&7)"
+  opponent-insufficient-bank: "&cRakip klanın bankasında yeterli bakiye bulunmuyor!"
+  war-invite-sent: "&a%clan% &7klanına savaş isteği iletildi! &8(Bahis: &6%bet%&8)"
+  war-invite-received: "&e%clan% &7klanı size meydan okuyor! &8(Bahis: &6%bet%&8)"
+  war-invite-accept-info: "&a/klan savas kabul %clan% &7komutu ile meydan okumayı kabul edebilirsiniz."
+  test-mode-enabled: "&aAdmin test modu &2ETKİNLEŞTİRİLDİ&a."
+  test-mode-disabled: "&cAdmin test modu &4DEVRE DIŞI&c."
+  fake-clan-created: "&a%clan% &7adında yapay bir klan oluşturuldu."
+  bots-added: "&a%count% &7adet bot &e%clan% &7klanına eklendi."
+  
+  # War Messages
+  war-spectate-error-not-in-war: "&cBu klan şu an savaşta değil."
+  war-spectate-success: "&aSavaş izleniyor: %clanA% vs %clanB%"
+  war-spectate-stop: "&aİzleyici modundan çıkıldı."
+  war-error-no-active-war: "&cŞu an aktif bir savaş yok."
+  war-sub-not-allowed: "&cBu savaşta oyuncu değişikliği yasak!"
+  war-sub-player-not-found: "&cOyuncu bulunamadı veya çevrimdışı."
+  war-sub-not-same-clan: "&cBu oyuncu senin klanında değil!"
+  war-sub-already-in-war: "&cBu oyuncu zaten savaşta!"
+  war-sub-sender-not-in-war: "&cSavaşta değilsin, oyuncu değişikliği yapamazsın."
+  war-sub-out-msg: "&eSavaştan çıktın, yerine %player% girdi."
+  war-sub-in-msg: "&aSavaşa dahil oldun!"
+  war-sub-broadcast: "&e🔄 OYUNCU DEĞİŞİKLİĞİ: §c%out% §7çıktı, §a%in% §7girdi!"
+  war-sub-failed: "&cDeğişiklik yapılamadı."
+  war-sudden-death-title: "&c☠ SUDDEN DEATH ☠"
+  war-sudden-death-subtitle: "&eİLK VURAN KAZANIR!"
+  war-sudden-death-broadcast: "&c☠ §lSUDDEN DEATH! §c☠"
+  war-sudden-death-msg1: "&eSüre doldu ve skorlar eşit!"
+  war-sudden-death-msg2: "&6İlk skoru alan kazanır! Arena daralıyor!"
+  
+  # Hologram
+  hologram-title: "&6&l⚔ KLAN SAVAŞI ⚔"
+  hologram-versus: "&b%clanA% &8vs &c%clanB%"
+  hologram-bet: "&eBahis Bedeli: &6%bet%"
+  hologram-starting: "&7Savaş Başlatılıyor..."
+  hologram-status: "&aSKOR: &b%scoreA% &7- &c%scoreB% &8| &e%time%sn"
+  
+  # Menus (Legacy Config - Used by older code if any)
+  menu-main-title: "&8Klan Kontrol Paneli"
+  menu-filler-name: "&r"
+  menu-info-name: "&e&lKlan Bilgileri"
+  menu-info-lore:
+    - ""
+    - "&7Klan Adı: &f%clan%"
+    - "&7Lider: &f%leader%"
+    - "&7Seviye: &e%level%"
+    - "&7Üye Sayısı: &b%members%"
+    - "&7Kasa: &6%bank% DkCoin"
+    - ""
+  menu-members-name: "&a&lÜyeler"
+  menu-members-lore:
+    - ""
+    - "&7Klan üyelerini yönetmek ve"
+    - "&7listelemek için tıklayın."
+    - ""
+  menu-bank-name: "&6&lKlan Bankası"
+  menu-bank-lore:
+    - ""
+    - "&7Bankaya para yatırmak veya"
+    - "&7çekmek için tıklayın."
+    - "&7Mevcut: &6%bank% DkCoin"
+    - ""
+  menu-upgrades-name: "&b&lKlan Yükseltmeleri"
+  menu-upgrades-lore:
+    - ""
+    - "&7Klan seviyesini arttırmak"
+    - "&7için tıklayın."
+    - ""

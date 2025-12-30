@@ -1,0 +1,27 @@
+name: DkKlan
+version: 1.0
+main: com.dkprojects.dkklan.DkKlan
+api-version: 1.13
+authors: [DkProjects]
+softdepend: [Vault, DkCoin]
+description: MAVERA | Klan ve topluluk yönetim sistemi
+commands:
+  klan:
+    description: MAVERA Klan komutları
+    aliases: [clan, f, faction]
+  k:
+    description: MAVERA Klan sohbeti
+    usage: /k <mesaj>
+  klansavasi:
+    description: Klan savasi yonetimi
+    aliases: [ks, clanwar]
+  dkklan:
+    description: DkKlan yönetim komutu
+    usage: /dkklan reload
+permissions:
+  dkklan.admin:
+    description: DkKlan admin yetkileri
+    default: op
+  dkklan.test:
+    description: DkKlan admin test modu yetkisi
+    default: op
